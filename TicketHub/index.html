@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicketHub | Техническа поддръжка</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><div class="container"><h1>TicketHub</h1><span>Система за техническа поддръжка</span></div></header>
+  <main class="container">
+    <section class="intro"><h2>Заявки за поддръжка</h2><p>Добавяй и проследявай заявки и срокове за реакция.</p></section>
+    <section class="panel">
+      <h3>Нова заявка</h3>
+      <form id="ticket-form">
+        <label for="title">Заглавие</label><input id="title" name="title" required maxlength="100" placeholder="Например: Проблем с принтера">
+        <label for="description">Описание</label><textarea id="description" name="description" required maxlength="1000" rows="3"></textarea>
+        <label for="priority">Приоритет</label><select id="priority" name="priority"><option value="low">Нисък (48 ч.)</option><option value="medium" selected>Среден (24 ч.)</option><option value="high">Висок (4 ч.)</option></select>
+        <button type="submit">Създай заявка</button>
+      </form>
+    </section>
+    <section class="panel"><div class="section-head"><h3>Всички заявки</h3><label for="filter">Статус <select id="filter"><option value="all">Всички</option><option value="open">Отворени</option><option value="progress">В процес</option><option value="closed">Затворени</option></select></label></div><div id="tickets" aria-live="polite"></div></section>
+  </main>
+  <footer class="container">TicketHub · Демонстрационен проект</footer>
+</body>
+</html>
